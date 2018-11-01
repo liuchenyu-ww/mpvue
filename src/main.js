@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import App from './App'
+import WXrequest from './utils/wx-request'
+import 'mpvue-weui/src/style/weui.css'
+Vue.prototype.$httpWX = WXrequest
 
 Vue.config.productionTip = false
 App.mpType = 'app'

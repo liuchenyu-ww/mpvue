@@ -136,31 +136,63 @@
         </div>
       </div>
     </div>
+    <div style="text-align:left;">
+      <div class="header_text">Looo-Gepen 人气单品限时抢购</div>
+      <div>
+        <div class="peNumber">现已累计人气 <span class="number">{{peaplenumber}}</span> 人</div>
+        <div class="numadd"><navigator url='http://mpvue.com/qa/#vue-router'><span class="corsur">＋ 点击加入购物车</span><img src="../../../static/assets/shoppingblue.png" alt="购物车"></navigator></div>
+      </div>
+    </div>
+    <div class="bannerArr">
+      <div class="banerfirst">
+        <img :src="photo" alt="人气单品">
+      </div>
+    </div>
+    <div style="text-align:left;">
+      <div class="header_text">Looo-Gepen 人气单品限时抢购</div>
+      <div>
+        <div class="peNumber">现已累计人气 <span class="number">{{peaplenumber}}</span> 人</div>
+        <div class="numadd"><navigator url='http://mpvue.com/qa/#vue-router'><span class="corsur">＋ 点击加入购物车</span><img src="../../../static/assets/shoppingblue.png" alt="购物车"></navigator></div>
+      </div>
+    </div>
+    <div class="bannerArr">
+      <div class="banerfirst">
+        <img :src="phototwo" alt="人气单品">
+      </div>
+    </div>
     <div class="hr_header"></div>
     <div class="footer">
       <div>
-        <div>
-          <img src="../../../static/assets/首页s.png" alt="短裙">
-        </div>
-        <div style="color:#FA7AD7;">潮流前线</div>
+        <a href="#">
+          <div>
+            <img src="../../../static/assets/首页s.png" alt="首页">
+          </div>
+          <div style="color:#FA7AD7;">潮流前线</div>
+        </a>
       </div>
       <div>
-        <div>
-          <img src="../../../static/assets/购物车t.png" alt="短裙">
-        </div>
-        <div>购物车</div>
+        <a href="/pages/shoppingCart/main">
+          <div>
+            <img src="../../../static/assets/购物车t.png" alt="购物车">
+          </div>
+          <div>购物车</div>
+        </a>
       </div>
       <div>
-        <div>
-          <img src="../../../static/assets/更多.png" alt="短裙">
-        </div>
-        <div>更多商品</div>
+        <a href="/pages/more/main">
+          <div>
+            <img src="../../../static/assets/More2.png" alt="更多">
+          </div>
+          <div>更多商品</div>
+        </a>
       </div>
       <div>
-        <div>
-          <img src="../../../static/assets/我的.png" alt="短裙">
-        </div>
-        <div>我的信息</div>
+        <a href="/pages/counter/main">
+          <div>
+            <img src="../../../static/assets/我的.png" alt="我的">
+          </div>
+          <div>我的信息</div>
+        </a>
       </div>
     </div>
   </div>
@@ -172,7 +204,8 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      msg: '点我点我点我',
+      photo: '',
+      phototwo: '',
       peaplenumber: '20123'
     }
   },
@@ -180,8 +213,53 @@ export default {
   components: {
     card
   },
-
+  mounted () {
+    this.query()
+  },
   methods: {
+    query () {
+      this.$httpWX.post({
+        url: '/example/Studystep',
+        data: {
+          // 'categoryType': 'SaleGoodsType@sim',
+          // 'streamNo': 'web_bss153570682909641893',
+          // 'reqSource': 'MALL_H5',
+          // 'appid': 'string',
+          // 'timestamp': 1535706829096,
+          // 'sign': 'string'
+        }
+      }).then(res => {
+        console.log(res)
+      })
+      this.$httpWX.post({
+        url: '/example/Studystep/one',
+        data: {
+          // 'categoryType': 'SaleGoodsType@sim',
+          // 'streamNo': 'web_bss153570682909641893',
+          // 'reqSource': 'MALL_H5',
+          // 'appid': 'string',
+          // 'timestamp': 1535706829096,
+          // 'sign': 'string'
+        }
+      }).then(res => {
+        console.log(res)
+        this.photo = res.data.photo
+      })
+      this.$httpWX.post({
+        url: '/example/Studystep/two',
+        data: {
+          // 'categoryType': 'SaleGoodsType@sim',
+          // 'streamNo': 'web_bss153570682909641893',
+          // 'reqSource': 'MALL_H5',
+          // 'appid': 'string',
+          // 'timestamp': 1535706829096,
+          // 'sign': 'string'
+        }
+      }).then(res => {
+        console.log(res)
+        this.phototwo = res.data.myphoto
+      })
+    },
     clickHandle () {
       this.msg = ''
     }

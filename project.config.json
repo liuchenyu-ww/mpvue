@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": false,
 		"postcss": true,
 		"minified": true,
@@ -10,7 +10,7 @@
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
 	"appid": "wxd0ef8ac853a78fda",
-	"projectname": "map-vue",
+	"projectname": "mp-vue",
 	"condition": {
 		"search": {
 			"current": -1,

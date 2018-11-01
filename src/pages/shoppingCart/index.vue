@@ -2,17 +2,6 @@
   <div class="container" @click="clickHandle()">
     <div class="header">Looo-Geopen</div>
     <div class="hr_header"></div>
-    <div>
-      <mp-slider step=5 showValue></mp-slider>
-      <!-- 默认状态 -->
-      <mp-rate rateValue=3 @rateClick="rateClick"></mp-rate>
-
-      <!-- 通过自定义 class 改变 rate 组件大小 -->
-      <mp-rate rateValue=4.5 rateClass="weui-rate-20"></mp-rate>
-
-      <!-- 支持点击 -->
-      <mp-rate rateValue=4.5 @rateClick="rateClick" :isSupportClick=true></mp-rate>
-    </div>
     <div class="footer">
       <div>
         <a href="/pages/index/main">
@@ -23,11 +12,11 @@
         </a>
       </div>
       <div>
-        <a href="/pages/shoppingCart/main">
+        <a href="#">
           <div>
-            <img src="../../../static/assets/购物车t.png" alt="购物车">
+            <img src="../../../static/assets/shoppink.png" alt="购物车">
           </div>
-          <div>购物车</div>
+          <div style="color:#FA7AD7;">购物车</div>
         </a>
       </div>
       <div>
@@ -39,11 +28,11 @@
         </a>
       </div>
       <div>
-        <a href="#">
+        <a href="/pages/counter/main">
           <div>
-            <img src="../../../static/assets/my2.png" alt="我的">
+            <img src="../../../static/assets/我的.png" alt="我的">
           </div>
-          <div style="color:#FA7AD7;">我的信息</div>
+          <div>我的信息</div>
         </a>
       </div>
     </div>
@@ -52,31 +41,23 @@
 
 <script>
 import card from '@/components/card'
-import mpSlider from 'mpvue-weui/src/slider'
-import mpRate from 'mpvue-weui/src/rate'
 
 export default {
   data () {
     return {
       photo: '',
       phototwo: '',
-      peaplenumber: '20123',
-      rateScoreText: '',
-      rateScoreDesc: ['非常不满意，各方面都很差', '不满意，比较差', '一般，还需改善', '比较满意，仍可改善', '非常满意,无可挑剔']
+      peaplenumber: '20123'
     }
   },
+
   components: {
-    card,
-    mpSlider,
-    mpRate
+    card
   },
   mounted () {
     this.query()
   },
   methods: {
-    rateClick (index) {
-      this.rateScoreText = this.rateScoreDesc[index]
-    },
     query () {
       this.$httpWX.post({
         url: '/example/Studystep',
