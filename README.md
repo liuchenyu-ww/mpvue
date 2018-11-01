@@ -21,3 +21,17 @@ npm run build
 npm run build --report
 ```
 
+## 项目技术栈
+``` bash
+# 前端技术栈
+mpvue + mpvue-weui
+
+# 数据
+easy mock 模拟数据
+```
+
+## 进度
+``` bash
+潮流前线前端静态，模拟数据两条，购物车，更多和我的未完成。
+```
+
