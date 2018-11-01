@@ -2,7 +2,7 @@
 
 > 美团开源小程序框架mpvue进阶学习
 
-## Build Setup
+## 安装
 
 ``` bash
 # install dependencies
