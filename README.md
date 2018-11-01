@@ -34,7 +34,8 @@ easy mock 模拟数据
 ``` bash
 潮流前线前端静态，模拟数据两条，购物车，更多和我的未完成。
 ```
-# Mpvue-WeUI相关文档 借鉴自 - Mpvue-WeUI作者
+# Mpvue-WeUI相关文档
+## 借鉴自 - Mpvue-WeUI作者
 ##### [原文档地址(Mpvue-WeUI Github地址)](https://github.com/MPComponent/mpvue-weui)
 <p align="center" style="text-align: center">
   <a href="https://mpcomponent.github.io/mpvue-weui/">
