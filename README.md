@@ -13,7 +13,7 @@ npm run dev
 
 ```
 ## 打包
-```
+``` bash
 # build for production with minification
 npm run build
 
