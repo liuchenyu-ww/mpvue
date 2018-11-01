@@ -1,6 +1,6 @@
 # map-vue
 
-> A Mpvue project
+> 美团开源小程序框架mpvue进阶学习
 
 ## Build Setup
 
